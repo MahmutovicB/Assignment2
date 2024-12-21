@@ -1,0 +1,11 @@
+.navbar {
+    background-color: #8F6449;
+}
+body {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)),  url("back1.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}

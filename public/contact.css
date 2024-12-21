@@ -1,0 +1,7 @@
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0.70)),  url("radionica.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

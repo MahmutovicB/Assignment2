@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.774), rgba(0, 0, 0, 0.70)),  url("slikaprva.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.lijeva{
+    height: 85vh;
+    text-align: end;
+}
+
+.slika{
+    height: 150px;
+}
+
+@media (max-width: 1024px) {
+    .slika{
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slika{
+        height: 150px;
+        margin-top: 200px;
+    }
+
+    .container-slike{
+        display: flex;
+        justify-content: center;
+    }
+
+    .lijeva{
+        height: 30vh;
+        text-align: center;
+        padding-top: 20vh;
+    }
+}
