@@ -22,9 +22,6 @@ function switchTheme(theme) {
         navbar.style.backgroundColor = '#f2f2f2';
         button.style.backgroundColor = '#f2f2f2';
         footer.style.backgroundColor = '#f2f2f2';
-        button.style.color = '#000000';
-        footer.style.color = '#000000';
-        navbar.style.color = '#000000';
         navbutton.forEach(element => {
             element.classList.add('text-dark');
             element.classList.remove('text-white');
@@ -38,9 +35,6 @@ function switchTheme(theme) {
         navbar.style.backgroundColor = '#293040';
         button.style.backgroundColor = '#293040';
         footer.style.backgroundColor = '#293040';
-        button.style.color = '';
-        footer.style.color = '';
-        navbar.style.color = '';
         navbutton.forEach(element => {
             element.classList.remove('text-dark');
             element.classList.add('text-white');

@@ -61,3 +61,30 @@ body {
     cursor: pointer;
 }
 
+.accordion-button {
+    background-color: #293040;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accordion-button:focus {
+    outline: none;
+}
+
+.accordion-collapse {
+    display: none;
+}
+
+.accordion-collapse.show {
+    display: block;
+}
+
+.accordion-body {
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #000000;
+}

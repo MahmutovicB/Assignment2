@@ -87,7 +87,7 @@
                     </li>
         </nav>
 
-        <main>
+        <main style="height: 110vh;">
             <div class="container-fluid mt-5 text-center text-white" >
                 <h1 class="" style="font-weight: lighter;">Proizvodi</h1>
             </div>
@@ -210,6 +210,33 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="accordion mt-5" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" onclick="toggleAccordion('collapseOne')">
+                                Is it possible to order online?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Yes, it is possible to order online. You can contact us via email or phone number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" onclick="toggleAccordion('collapseTwo')">
+                                Can I order a custom made product?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Yes, you can order a custom made product. You can contact us via email or phone number.
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </main>
 
         <footer>
@@ -230,31 +257,7 @@
             </div> 
         </footer>
         
-        <script>
-            function openModal(imageSrc) {
-                var modal = document.getElementById("myModal");
-                var modalImg = document.getElementById("modalImage");
-                modal.style.display = "block";
-                modalImg.src = imageSrc;
-            }
-            
-            function closeModal() {
-                var modal = document.getElementById("myModal");
-                modal.style.display = "none";
-            }
-
-            function toggleContent(contentId) {
-                var button = event.target;
-                var content = document.getElementById(contentId);
-                if (content.style.display === "none") {
-                    content.style.display = "block";
-                    button.textContent = "Show less...";
-                } else {
-                    content.style.display = "none";
-                    button.textContent = "See more...";
-                }
-            }   
-        </script>
+        <script src="products.js"></script>
         
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
