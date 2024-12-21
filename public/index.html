@@ -41,16 +41,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-5 fs-5">
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="index.html">Home</a>
+                        <a id="navitem" class="nav-link text-white nav-item-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="about.html">About</a>
+                        <a id="navitem" class="nav-link text-white nav-item-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="products.html">Products</a>
+                        <a id="navitem" class="nav-link text-white nav-item-link" href="products.html">Products</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="contact.html">Contact us</a>
+                        <a id="navitem" class="nav-link text-white nav-item-link" href="contact.html">Contact us</a>
                     </li>
                     
                     <li class="nav-item mx-2">
@@ -89,19 +89,24 @@
         </nav>
 
         <main>
+            <div class="p-2 theme-switcher">
+                <button class="btn btn-secondary" onclick="switchTheme('default')">Default Theme</button>
+                <button class="btn btn-secondary" onclick="switchTheme('dark')">Dark Theme</button>
+                <button class="btn btn-secondary" onclick="switchTheme('light')">Light Theme</button>
+            </div>
             <div class="container w-60 align-content-center text-white" style="height: 80vh;">
                 <div class="row justify-content-center text-center">
                     <h1 style="font-weight: lighter;">Radionica Mahmutovic</h1>
                     <p style="font-weight: lighter; ">Dobrodosli u Radionicu Mahmutovic, mjesto gdje se susrecu tradicija, umijece i ljubav.</p>
-                    <a href="about.html"><button class="btn btn-lg ms-2 text-white" style="background-color: #293040; width: 50%;">Read More</button></a>
+                    <a href="about.html"><button id="readMoreButton" class="btn btn-lg ms-2 text-white" style="background-color: #293040; width: 50%;">Read More</button></a>
                 </div>
             </div>
 
             
         </main>
 
-        <footer>
-            <div class="container-fluid text-center text-white pt-5" style="background-color: #293040;">
+        <footer id="ftr">
+            <div id="ftrdiv" class="container-fluid text-center text-white pt-5" style="background-color: #293040;">
                 <div class="row">
                     <div class="col-md-4 offset-md-2 align-content-center">
                         <h2 style="font-weight: lighter;">About Me</h2>
@@ -119,7 +124,7 @@
         </footer>
 
         
-        
+        <script src="index.js"></script>
         
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -97,11 +97,14 @@
                     <div class="kartica col-md-3 p-5">
                         <div class="card shadow" style="background-color: #293040; position:relative; border-radius: 10%;">
                             
-                            <img src="daske1.jpg" alt="Daske" style="border-radius: 5% 5% 0 0;">
+                            <img src="daske1.jpg" alt="Daske" style="border-radius: 5% 5% 0 0;" onclick="openModal('daske1.jpg')">
                     
                             <div class="card-body text-white" style="background-color: #293040; border-radius: 10%;">
                                 <h5 class="card-title">Daske za serviranje</h5>
-                                <p class="card-text">Veoma pouzdane i cvrste daske od punog drveta iz suma nase Bosne i Hercegovine.</p>
+                                <button onclick="toggleContent('content1')" class="btn btn-secondary">See more...</button>
+                                <div id="content1" style="display: none;">
+                                    <p class="card-text">Veoma pouzdane i cvrste daske od punog drveta iz suma nase Bosne i Hercegovine.</p>
+                                </div>
                             </div>
 
                             <div class="card-footer" style="background-color: #293040; position:relative;">
@@ -113,12 +116,16 @@
                     <div class="kartica col-md-3 p-5">
                         <div class="card shadow" style="background-color: #293040; position:relative; border-radius: 10%;">
                             
-                            <img src="sjecke5.jpg" alt="Sjecke" style="border-radius: 5% 5% 0 0">
+                            <img src="sjecke5.jpg" alt="Sjecke" style="border-radius: 5% 5% 0 0" onclick="openModal('sjecke5.jpg')">
                     
                             <div class="card-body text-white" style="background-color: #293040; border-radius: 10%;">
                                 <h5 class="card-title">Daske za rezanje</h5>
-                                <p class="card-text">Kao savrsen dodatak vasem ambijentu, nase daske za serviranje igraju glavnu ulogu.</p>
+                                <button onclick="toggleContent('content2')" class="btn btn-secondary">See more...</button>
+                                <div id="content2" style="display: none;">
+                                    <p class="card-text">Kao savrsen dodatak vasem ambijentu, nase daske za serviranje igraju glavnu ulogu.</p>
+                                </div>
                             </div>
+                            
 
                             <div class="card-footer" style="background-color: #293040; position:relative;">
                                 <a href="#" class="btn btn-primary" style="background-color: #8F6449;">Detaljnije</a> 
@@ -129,11 +136,14 @@
                     <div class="kartica col-md-3 p-5">
                         <div class="card shadow" style="background-color: #293040; position:relative; border-radius: 10%;">
                             
-                            <img src="stol1.jpg" class="" alt="Stolovi" style="border-radius: 5% 5% 0 0; height: 200px;">
+                            <img src="stol1.jpg" class="" alt="Stolovi" style="border-radius: 5% 5% 0 0; height: 200px;" onclick="openModal('stol1.jpg')">
                     
                             <div class="card-body text-white" style="background-color: #293040; border-radius: 10%;">
                                 <h5 class="card-title">Stolovi</h5>
-                                <p class="card-text">Nasi stolovi od prvoklasnog drveta upotpunjuju vas svakodnevni prostor.</p>
+                                <button onclick="toggleContent('content3')" class="btn btn-secondary">See more...</button>
+                                <div id="content3" style="display: none;">
+                                    <p class="card-text">Nasi stolovi od prvoklasnog drveta upotpunjuju vas svakodnevni prostor.</p>
+                                </div>
                             </div>
 
                             <div class="card-footer" style="background-color: #293040; position:relative;">
@@ -145,17 +155,25 @@
                     <div class="kartica col-md-3 p-5">
                         <div class="card shadow" style="background-color: #293040; position:relative; border-radius: 10%;">
                             
-                            <img src="krevet1.jpg" class="" alt="Kreveti" style="border-radius: 5% 5% 0 0;">
+                            <img src="krevet1.jpg" class="" alt="Kreveti" style="border-radius: 5% 5% 0 0;" onclick="openModal('krevet1.jpg')">
                     
                             <div class="card-body text-white" style="background-color: #293040; border-radius: 10%;">
                                 <h5 class="card-title">Kreveti</h5>
-                                <p class="card-text">Uz krevete iz nase radionice, svaki san ce vam biti lijep. Uz vas smo i kada spavate.</p>
+                                <button onclick="toggleContent('content4')" class="btn btn-secondary">See more...</button>
+                                <div id="content4" style="display: none;">
+                                    <p class="card-text">Uz krevete iz nase radionice, svaki san ce vam biti lijep. Uz vas smo i kada spavate.</p>
+                                </div>
                             </div>
 
                             <div class="card-footer" style="background-color: #293040; position:relative;">
                                 <a href="#" class="btn btn-primary" style="background-color: #8F6449;">Detaljnije</a> 
                             </div>
                         </div>
+                    </div>
+
+                    <div id="myModal" class="modal">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <img class="modal-content" id="modalImage">
                     </div>
                 </div>
 
@@ -212,6 +230,31 @@
             </div> 
         </footer>
         
+        <script>
+            function openModal(imageSrc) {
+                var modal = document.getElementById("myModal");
+                var modalImg = document.getElementById("modalImage");
+                modal.style.display = "block";
+                modalImg.src = imageSrc;
+            }
+            
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+
+            function toggleContent(contentId) {
+                var button = event.target;
+                var content = document.getElementById(contentId);
+                if (content.style.display === "none") {
+                    content.style.display = "block";
+                    button.textContent = "Show less...";
+                } else {
+                    content.style.display = "none";
+                    button.textContent = "See more...";
+                }
+            }   
+        </script>
         
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

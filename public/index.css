@@ -9,3 +9,19 @@ body {
     background-attachment: fixed;
     
 }
+
+
+nav.default-theme {
+    background-color: #293040;
+    color: #8F6449;
+}
+
+nav.dark-theme {
+    background-color: #1d1d1e;
+    color: #8F6449;
+}
+
+nav.light-theme {
+    background-color: #293040;
+    color: #ffffff;
+}
