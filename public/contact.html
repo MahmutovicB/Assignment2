@@ -111,7 +111,48 @@
                     <button class="btn btn-lg btn-primary"><a href="https://www.linkedin.com/in/benjodev/" target="_blank"><i class="fa-brands fa-linkedin" style="color: aliceblue;"></i></a></button>
 
                 </div>
+                <button class="btn btn-lg mt-4" style="background-color: #8F6449;" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
+                <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-black" id="contactModalLabel">Contact Us</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-body">
+                                    <form id="contactForm">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label text-black">Name</label>
+                                            <input type="text" class="form-control" id="cname" name="name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label text-black">Email</label>
+                                            <input type="email" class="form-control" id="cemail" name="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="date" class="form-label text-black">Date</label>
+                                            <input type="date" class="form-control" id="cdate" name="date" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label text-black">Password</label>
+                                            <input type="password" class="form-control" id="cpassword" name="password" required>
+                                            <div class="progress mb-3 ">
+                                                <div id="pb" class="progress-bar bg-warning" role="progressbar" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100">
+                                                   
+                                                </div>
+                                            </div>
+                                            <div id="passwordHelp" class="form-text">Must be 8-20 characters long.</div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary" onclick="validateForm(event)">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </main>
 
         <footer>
@@ -133,7 +174,7 @@
         </footer>
         
         
-        
+        <script src="contact.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
