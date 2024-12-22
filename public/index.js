@@ -46,3 +46,4 @@ function switchTheme(theme) {
         footer.classList.add('text-white');
     }
 }
+
