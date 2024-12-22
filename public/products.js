@@ -52,5 +52,48 @@ function getData(name, image, description) {
     openNewPageWithData(data);
 }
 
+function editProduct(id) {
+    var table = document.getElementById('tbody');
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        if (row.cells[0].innerHTML == id) {
+            for (var j = 1; j < row.cells.length - 2; j++) {
+                var cell = row.cells[j];
+                var input = document.createElement('input');
+                input.type = 'text';
+                input.value = cell.innerHTML;
+                cell.innerHTML = '';
+                cell.appendChild(input);
+            }
+            row.cells[row.cells.length - 2].innerHTML = `<button class="btn btn-secondary"  onclick="saveProduct(${id})">Save</button>`;
+            break;
+        }
+    }
+}
+
+function saveProduct(id) {
+    var table = document.getElementById('tbody');
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        if (row.cells[0].innerHTML == id) {
+            for (var j = 1; j < row.cells.length - 2; j++) {
+                var cell = row.cells[j];
+                var input = cell.firstChild;
+                cell.innerHTML = input.value;
+            }
+            row.cells[row.cells.length - 2].innerHTML = `<button class="btn btn-secondary" onclick="editProduct(${id})">Edit</button>`;
+            break;
+        }
+    }
+}
+
+function deleteProduct(id) {
+    var table = document.getElementById('tbody');
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        if (row.cells[0].innerHTML == id) {
+            table.deleteRow(i);
+            break;
+        }
+    }
+}
+
 
 
