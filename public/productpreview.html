@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="products.css">
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #293040;">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" class="img-fluid ps-3" style="height: 70px;" alt="">
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+            <i class="fa-solid fa-bars" style="color: #8F6449;"></i>
+            </button>       
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-5 fs-5">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-white" href="contact.html">Contact us</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <button class="btn btn-lg text-white" data-bs-toggle="modal" data-bs-target="#myModal1" style="background-color: #8F6449;" >Log in</button>
+
+                        <div class="modal fade" id="myModal1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Log in</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="">
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="password">
+                                            </div>
+                                            <button type="submit" class="btn text-white" style="background-color: #293040 ;">Submit</button>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="register.html">
+                                            <button class="btn text-white" style="background-color: #8F6449;">Register</button>
+                                        </a>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+        </nav>
+
+        <main style="height: 80vh;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3 justify-content-center align-items-center mt-5">
+                        <h1 class="pname text-white" id="pname"></h1>
+                        <img src="" id="pimg" alt="" class="pimg" style="height: 300px; border-radius: 10%;">
+                        <p class="pdesc text-white" id="pdesc"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid text-center text-white pt-5" style="background-color: #293040;">
+                <div class="row">
+                    <div class="col-md-4 offset-md-2 align-content-center">
+                        <h2 style="font-weight: lighter;">About Me</h2>
+                        <p style="font-weight: lighter;">Benjamin Mahmutovic</p>
+                        <p style="font-weight: lighter;">Student ID: 24005161</p>
+                    </div>
+                    <div class="col-md-4 align-content-center">
+                        <h2 style="font-weight: lighter;">IBU 061</h2>
+                        <h4 style="font-weight: lighter;">Foundations of Web Development</h4>
+                        <p style="font-weight: lighter;">MDc Amela Vatres Mudzelet</p>
+                        <p style="font-weight: lighter;">L.A. Ajla Korman</p>
+                    </div>
+                </div>
+            </div> 
+        </footer>
+        
+        <script src="products.js"></script>
+
+        <script>
+            function getQueryParams() {
+                const params = new URLSearchParams(window.location.search);
+                return {
+                    name: params.get('name'),
+                    image: params.get('image'),
+                    description: params.get('description')
+                };
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const data = getQueryParams();
+                document.getElementById('pname').textContent = data.name;
+                document.getElementById('pimg').setAttribute('src', data.image);
+                document.getElementById('pdesc').textContent = data.description;
+            });
+        </script>
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/145fc39f77.js" crossorigin="anonymous"></script>
+    </body>
+</html>

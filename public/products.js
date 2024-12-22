@@ -35,3 +35,22 @@ function toggleAccordion(collapseId) {
         content.classList.add('show');
     }
 }
+
+function openNewPageWithData(data) {
+    const url = new URL('http://127.0.0.1:5500/public/productpreview.html'); 
+    Object.keys(data).forEach(key => url.searchParams.append(key, data[key]));
+    window.open(url, '_blank');
+}
+
+function getData(name, image, description) {
+    data = {
+        name: name,
+        image: image,
+        description: description
+    };
+    console.log(data);
+    openNewPageWithData(data);
+}
+
+
+
